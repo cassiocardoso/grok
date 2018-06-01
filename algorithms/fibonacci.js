@@ -7,23 +7,27 @@ function recursiveFibonacci(index) {
     return 1;
   }
 
-  return recursiveFibonacci(index - 1) + recursiveFibonacci(index - 2); 
+  return recursiveFibonacci(index - 1) + recursiveFibonacci(index - 2);
 }
-
-console.log(recursiveFibonacci(5));
 
 /**
  * Return the value in the Fibonacci sequence of a given position
  * Complexity: O(n)
  */
 function memoizedFibonacci(index, cache = {}) {
-  if (cache[index]) {
-    return cache[index];
+  if (index < 0) {
+    return 0;
   } else if (index < 3) {
     return 1;
+  } else if (cache[index]) {
+    return cache[index];
   }
-  
-  return cache[index] = memoizedFibonacci(index - 1, cache) + memoizedFibonacci(index - 2, cache);
+
+  return (cache[index] =
+    memoizedFibonacci(index - 1, cache) + memoizedFibonacci(index - 2, cache));
 }
 
-console.log(memoizedFibonacci(50));
+module.exports = {
+  memoizedFibonacci,
+  recursiveFibonacci
+};
