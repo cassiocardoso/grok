@@ -15,8 +15,10 @@ function recursiveFibonacci(index) {
  * Complexity: O(n)
  */
 function memoizedFibonacci(index, cache = {}) {
-  if (index < 0) {
-    return 0;
+  if (typeof index !== 'number') {
+    throw new Error('You must enter a number');
+  } else if (index < 0) {
+    throw new Error('Negative numbers are not allowed');
   } else if (index < 3) {
     return 1;
   } else if (cache[index]) {
