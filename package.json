@@ -1,0 +1,26 @@
+{
+  "name": "grok",
+  "version": "1.0.0",
+  "description": "Random notes on various subjects.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run test:clean",
+    "test:clean": "rimraf ./coverage",
+    "test": "jest --config ./jest.config.js --coverage",
+    "test:watch": "jest --config ./jest.config.js --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cassiocardoso/grok.git"
+  },
+  "keywords": [],
+  "author": "Cassio Cardoso <caugusto.cardoso@gmail.com> (https://github.com/cassiocardoso)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cassiocardoso/grok/issues"
+  },
+  "homepage": "https://github.com/cassiocardoso/grok#readme",
+  "devDependencies": {
+    "jest": "^23.1.0"
+  }
+}
